@@ -279,6 +279,11 @@ mp_int_t mp_obj_int_get_checked(mp_const_obj_t self_in) {
     return mp_obj_int_get_truncated(self_in);
 }
 
+mp_uint_t mp_obj_int_get_uint_checked(mp_const_obj_t self_in) {
+    // TODO: Check overflow
+    return mp_obj_int_get_truncated(self_in);
+}
+
 #if MICROPY_PY_BUILTINS_FLOAT
 mp_float_t mp_obj_int_as_float_impl(mp_obj_t self_in) {
     assert(mp_obj_is_type(self_in, &mp_type_int));
