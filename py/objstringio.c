@@ -62,8 +62,9 @@ STATIC mp_uint_t stringio_read(mp_obj_t o_in, void *buf, mp_uint_t size, int *er
     if (size > remaining) {
         size = remaining;
     }
-    memcpy(buf, o->vstr->buf + o->pos, size);
+    const mp_uint_t pos = o->pos;
     o->pos += size;
+    memcpy(buf, o->vstr->buf + pos, size);
     return size;
 }
 
