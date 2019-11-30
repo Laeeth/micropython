@@ -731,6 +731,11 @@ typedef double mp_float_t;
 #define MICROPY_CAN_OVERRIDE_BUILTINS (0)
 #endif
 
+// Allow ports to provide a lazy load function for undefined globals
+#ifndef MICROPY_LAZY_LOAD_GLOBAL
+#define MICROPY_LAZY_LOAD_GLOBAL (0)
+#endif
+
 // Whether to check that the "self" argument of a builtin method has the
 // correct type.  Such an explicit check is only needed if a builtin
 // method escapes to Python land without a first argument, eg
