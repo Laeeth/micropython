@@ -1551,6 +1551,11 @@ typedef double mp_float_t;
 #define MP_UNLIKELY(x) __builtin_expect((x), 0)
 #endif
 
+#ifndef STRINGIFY
+#define __STRINGIFY(x) #x
+#define STRINGIFY(x) __STRINGIFY(x)
+#endif
+
 // To annotate that code is unreachable
 #ifndef MP_UNREACHABLE
 #if defined(__GNUC__)
